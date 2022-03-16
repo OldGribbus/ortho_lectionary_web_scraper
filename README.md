@@ -1,2 +1,4 @@
-# ortho_lectionary_web_scraper
-An Eastern Orthodox lectionary using beautiful soup 
+ Orthodox lectionary web scraper
+-----------------------------------
+This is a simple web scraper I made using beautiful soup to quickly access the daily readings from this website https://www.holytrinityorthodox.com/calendar/index.php. 
+I plan to eventually move the thing to be entirely offline.
