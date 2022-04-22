@@ -5,6 +5,7 @@ import sys # for command line arguments (sys.argv)
 import re
 
 def webscraping(arguments = ''):
+
     today = date.today()
     year = today.year
     month = today.month
@@ -14,9 +15,13 @@ def webscraping(arguments = ''):
     page = requests.get(url).text
     doc = BeautifulSoup(page,'html.parser') 
     
-    # This is a stupid solution, finding a regular expression is good in other contexts, but maybe look for the class and print every string there. 
+    #The function below is in quarentine - there is no string attribute to 'calendar' 
+    def calendar_date_and_tone():
+        calendar = doc.find('span', 'normaltext')
+        print (calendar.string)
+
     def scripture_readings():
-        readings_tag = doc.find('b', string="The Scripture Readings")
+        readings_tag = doc.find('b', string ='The Scripture Readings')
         # Look for the sibling 'normaltext' class. 
         readings = readings_tag.parent.find_all(string=re.compile(':'))
         
@@ -25,15 +30,10 @@ def webscraping(arguments = ''):
         for reading in readings:
             print(reading)
         print("-----------------")
-
-    # The function below is in quarentine - there is no string attribute to 'calendar' 
-    # def calendar_date_and_tone():
-    #     calendar = doc.find('b', string=re.compile('Week '))
-    #     print (calendar.string)
     
     # - Only execute the functions that were called - #
+    calendar_date_and_tone()
     scripture_readings()
-    # calendar_date_and_tone()
 
 if __name__ == "__main__":
     #add the ability to have multiple commands - fasting days, saints,and troparia. 
