@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from datetime import date
 import requests 
-import sys # for command line arguments 
+import sys # for command line arguments (sys.argv)
 import re
 
 def webscraping(arguments = ''):
@@ -14,8 +14,10 @@ def webscraping(arguments = ''):
     page = requests.get(url).text
     doc = BeautifulSoup(page,'html.parser') 
     
+    # This is a stupid solution, finding a regular expression is good in other contexts, but maybe look for the class and print every string there. 
     def scripture_readings():
         readings_tag = doc.find('b', string="The Scripture Readings")
+        # Look for the sibling 'normaltext' class. 
         readings = readings_tag.parent.find_all(string=re.compile(':'))
         
         print(f"The scripture readings for {year}/{month}/{day}:")
