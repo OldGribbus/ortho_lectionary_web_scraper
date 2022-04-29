@@ -4,4 +4,4 @@ This is a simple Python web scraper I made using beautiful soup to quickly acces
 I plan to eventually move the thing to be entirely offline and include various features such as the lives of the saints.
 
 To run:
-'$python orthocalendar.py'
+'python orthocalendar.py'
