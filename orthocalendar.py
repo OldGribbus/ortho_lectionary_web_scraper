@@ -18,7 +18,7 @@ def webscraping(arguments = ''):
     def calendar_date_fast():
         calendar = doc.find('td', 'cellbg')
         for string in (calendar.p.span.b.strings):
-            print(string.strip()
+            print(string.strip())
 
     def scripture_readings():
         readings_tag = doc.find('b', string ='The Scripture Readings')
