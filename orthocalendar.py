@@ -15,10 +15,10 @@ def webscraping(arguments = ''):
     page = requests.get(url).text
     doc = BeautifulSoup(page,'html.parser') 
     
-    #The function below is in quarentine - there is no string attribute to 'calendar' 
-    def calendar_date_and_tone():
-        calendar = doc.find('span', 'normaltext')
-        print (calendar.string)
+    def calendar_date_fast():
+        calendar = doc.find('td', 'cellbg')
+        for string in (calendar.p.span.b.strings):
+            print(string.strip()
 
     def scripture_readings():
         readings_tag = doc.find('b', string ='The Scripture Readings')
