@@ -5,3 +5,5 @@ I plan to eventually move the thing to be entirely offline and include various f
 
 To run:
 'python orthocalendar.py'
+
+To set up an alias I added the setup.sh script, this detects the directory the script is placed in and echoes an alias into your bash rc to run it. 
