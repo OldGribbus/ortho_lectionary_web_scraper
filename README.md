@@ -1,9 +1,8 @@
  Orthodox lectionary
 -----------------------------------
-This is a simple Python web scraper I made using beautiful soup to quickly access the daily readings from this website https://www.holytrinityorthodox.com/calendar/index.php. 
-I plan to eventually move the thing to be entirely offline and include various features such as the lives of the saints.
+Simple Python web scraper I made using beautiful soup to quickly get the daily readings from https://www.holytrinityorthodox.com/calendar/index.php in the command line.
 
 To run:
-'python orthocalendar.py'
+'python orthocalendar.py' in the directory where the script lives. 
 
-To set up an alias I added the setup.sh script, this detects the directory the script is placed in and echoes an alias into your bash rc to run it. 
+The setup.sh script echoes an alias called 'dailyreadings' into the user's bash rc for quick access, it is not required if you know what you're doing.
