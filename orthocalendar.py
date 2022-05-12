@@ -30,7 +30,7 @@ def orthoCalendar(arguments = ''):
             print(reading)
         print("-----------------")
     
-    calendar_date_and_tone()
+    calendar_date_fast()
     scripture_readings()
 
 if __name__ == "__main__":
